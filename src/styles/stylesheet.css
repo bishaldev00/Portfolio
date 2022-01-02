@@ -324,7 +324,7 @@ body {
 }
 
 #projects__title .underline {
-  padding-right: 80px;
+  padding-right: 90px;
 }
 #line_left {
   width: 100px;
@@ -572,11 +572,11 @@ body {
   padding-right: 122px;
 }
 #line_left {
-  width: 145px;
+  width: 110px;
   margin-top: -8px;
 }
 #line_left_arrow {
-  margin-left: -162px;
+  margin-left: -126px;
 }
 
 #contact #form {
@@ -654,7 +654,7 @@ footer {
 }
 footer p {
   color: #eedcff;
-  font-size: 1.25rem;
+  font-size: 1.20rem;
 }
 footer span {
   color: var(--color-primary);
