@@ -4,6 +4,7 @@ const cleanCSS = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
+const replace = require('gulp-replace');
 
 //  minify html
 gulp.task('minifyHtml', () => {
@@ -37,10 +38,30 @@ gulp.task('autoPrefixer', () => {
 
 // compress images
 gulp.task('imageMin', async () => {
-    gulp.src('src/res/images/*')
+    gulp.src('src/res/images/*',)
         .pipe(imagemin())
         .pipe(gulp.dest('public/res/images'))
 });
+gulp.task('imageMinArrow', async () => {
+    gulp.src('src/res/images/arrow/*',)
+        .pipe(imagemin())
+        .pipe(gulp.dest('public/res/images/arrow'))
+});
+gulp.task('imageMinArrowLeft', async () => {
+    gulp.src('src/res/images/arrow-left/*',)
+        .pipe(imagemin())
+        .pipe(gulp.dest('public/res/images/arrow-left'))
+});
+gulp.task('imageMinArrowRight', async () => {
+    gulp.src('src/res/images/arrow-right/*',)
+        .pipe(imagemin())
+        .pipe(gulp.dest('public/res/images/arrow-right'))
+});
 
+gulp.task('replaceString',()=> {
+    return gulp.src('./index.html')
+      .pipe(replace('./', './public/'))
+      .pipe(gulp.dest('./'));
+  });
 
-gulp.task('default', gulp.series(['minifyHtml', 'minifyCss', 'minifyJs', 'autoPrefixer', 'imageMin']));
+gulp.task('default', gulp.series(['minifyHtml', 'minifyCss', 'minifyJs', 'autoPrefixer', 'imageMin','imageMinArrow','imageMinArrowLeft','imageMinArrowRight','replaceString']));
