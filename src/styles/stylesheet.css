@@ -375,6 +375,9 @@ body {
   background-color: #fff;
   margin: 15px;
   border-radius: 8px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0px 35px;
 }
 
 .browser_dots {
@@ -435,6 +438,9 @@ body {
 }
 .tags div:empty {
   display: none;
+}
+#item_one .body{
+  background-image: url(../res/images/Gym-Website-Landing-Page1_59.png);
 }
 
 /* --- See more ---- */
