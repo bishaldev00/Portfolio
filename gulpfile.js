@@ -12,12 +12,24 @@ gulp.task('minifyHtml', () => {
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest('public'));
 });
-
+gulp.task('minifyHtmlToRoot', () => {
+    return gulp.src('./src/*.html')
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(gulp.dest('./'))
+});
+//  add prefixes to css
+gulp.task('autoPrefixer', () => {
+    return gulp.src('src/styles/*.css')
+        .pipe(autoprefixer({
+            cascade: false
+        }))
+        .pipe(gulp.dest('public/styles'))
+});
 //  minify css
 gulp.task('minifyCss', () => {
-    return gulp.src('src/styles/*.css')
+    return gulp.src('public/styles/*.css')
         .pipe(cleanCSS({ compatibility: 'ie8' }))
-        .pipe(gulp.dest('public/style'));
+        .pipe(gulp.dest('public/styles'));
 });
 
 //  minify js
@@ -27,35 +39,13 @@ gulp.task('minifyJs', () => {
         .pipe(gulp.dest('public/js'));
 });
 
-//  add prefixes to css
-gulp.task('autoPrefixer', () => {
-    return gulp.src('src/styles/*.css')
-        .pipe(autoprefixer({
-            cascade: false
-        }))
-        .pipe(gulp.dest('public/styles'))
-});
+
 
 // compress images
 gulp.task('imageMin', async () => {
     gulp.src('src/res/images/*',)
         .pipe(imagemin())
         .pipe(gulp.dest('public/res/images'))
-});
-gulp.task('imageMinArrow', async () => {
-    gulp.src('src/res/images/arrow/*',)
-        .pipe(imagemin())
-        .pipe(gulp.dest('public/res/images/arrow'))
-});
-gulp.task('imageMinArrowLeft', async () => {
-    gulp.src('src/res/images/arrow-left/*',)
-        .pipe(imagemin())
-        .pipe(gulp.dest('public/res/images/arrow-left'))
-});
-gulp.task('imageMinArrowRight', async () => {
-    gulp.src('src/res/images/arrow-right/*',)
-        .pipe(imagemin())
-        .pipe(gulp.dest('public/res/images/arrow-right'))
 });
 
 gulp.task('replaceString',()=> {
@@ -64,4 +54,4 @@ gulp.task('replaceString',()=> {
       .pipe(gulp.dest('./'));
   });
 
-gulp.task('default', gulp.series(['minifyHtml', 'minifyCss', 'minifyJs', 'autoPrefixer', 'imageMin','imageMinArrow','imageMinArrowLeft','imageMinArrowRight','replaceString']));
+gulp.task('default', gulp.series(['minifyHtml','minifyHtmlToRoot', 'autoPrefixer', 'minifyJs', 'minifyCss', 'imageMin','replaceString']));
