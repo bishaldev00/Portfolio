@@ -748,14 +748,15 @@ footer .socials {
   }
   #navigation{
     padding: 0px;
-    margin-top: 7px;
+    padding-top: 6px;
+    margin-right: 75px;
   }
   #navigation ul{
-    position: static;
-    height: 44px;
+    position: unset;
+    width: 608px;
+    height: 45px;
     display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
+    justify-content: end;
     overflow: auto;
     border: none;
     background-color: #fff;
@@ -765,11 +766,14 @@ footer .socials {
 
 #navigation ul li {
   width: fit-content;
-  margin-left: 46px;
+  margin-left: 25px;
   padding: 0px;
   padding-top: 10px;
   font-weight: var(--font-bold);
 
+}
+#navigation ul li:last-child{
+  margin-right: -40px;
 }
 #navigation ul li  .active{
   color:white;
@@ -851,6 +855,10 @@ h2{
 
 #projects{
   background-image: url(../res/images/bg-2.svg);
+  padding-bottom: 75px;
+}
+#filter {
+  margin-left: 77vw;
 }
 #projects__title .underline svg{
   width: 140px;
@@ -862,9 +870,17 @@ h2{
   width: 190px;
 }
 #project_items{
+  width: 85%;
   justify-content: center;
+  margin: 0 auto;
 }
 .tags{
   padding-left: 15px;
 }
+#see_more {
+  margin-right: 245px;
+  font-size: 1.5rem;
+cursor: pointer;
+}
+
 }
