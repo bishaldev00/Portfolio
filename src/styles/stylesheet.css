@@ -16,6 +16,7 @@
   --color-semidark: #424242;
   --color-bg: #f3f2ff;
   --color-gray: #bababa;
+  scroll-behavior: smooth;
 }
 /*  --- Resets --- */
 * {
@@ -162,6 +163,9 @@ body {
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(1.5px);
   border-radius: 10px;
+}
+.fixed {
+  display: none;
 }
 .socials img {
   width: 35px;
@@ -439,7 +443,7 @@ body {
 .tags div:empty {
   display: none;
 }
-#item_one .body{
+#item_one .body {
   background-image: url(../res/images/Gym-Website-Landing-Page1_59.png);
 }
 
@@ -615,6 +619,18 @@ body {
   font-size: 1rem;
   box-shadow: inset 3px 3px 5px #949494, inset -5px -5px 9px #fbfbfb;
 }
+#contact textarea {
+  display: block;
+  width: 95%;
+  /* height: 50px; */
+  margin-top: 15px;
+  padding: 20px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  font-size: 1rem;
+  box-shadow: inset 3px 3px 5px #949494, inset -5px -5px 9px #fbfbfb;
+}
 #contact input[type="submit"] {
   width: fit-content;
   margin-left: auto;
@@ -681,4 +697,174 @@ footer .socials {
   padding: 10px 3px 5px;
   border-radius: 10px;
   box-shadow: none;
+}
+
+/* --- Tablet design --- */
+@media screen and (min-width: 710px) {
+  body {
+    min-width: 710px;
+    max-width: 960px;
+  }
+  #brand{
+    padding-top: 1.5%;
+  }
+  #navigation{
+    padding-top: 1.5%;
+  }
+  #code_animation div {
+    margin-left: 20px;
+  }
+  #boy_coding_animation img:nth-child(2) {
+    top:152px;
+  }
+  #project_items {
+    justify-content: space-evenly;
+  }
+  .body {
+    width: 315px;
+  }
+  #why{
+    margin-left: 75px;
+  }
+}
+
+/* --- small laptop */
+@media screen and (min-width:960px) {
+  body{
+    max-width: 1600px;
+    margin:0 auto;
+  }
+  #nav{
+    height: 60px;
+    left: 0;
+  }
+  #brand{
+    margin-left: 5%;
+    font-size: 2rem;
+    padding-top: .75%;
+  }
+  #collapse_bar{
+    display: none;
+  }
+  #navigation{
+    padding: 0px;
+    margin-top: 7px;
+  }
+  #navigation ul{
+    position: static;
+    height: 44px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    overflow: auto;
+    border: none;
+    background-color: #fff;
+    transition: none;
+    border-radius: 22px;
+  }
+
+#navigation ul li {
+  width: fit-content;
+  margin-left: 46px;
+  padding: 0px;
+  padding-top: 10px;
+  font-weight: var(--font-bold);
+
+}
+#navigation ul li  .active{
+  color:white;
+  background-color:var(--color-primary);
+}
+#navigation ul li a {
+  color: var(--color-primary);
+  background-color: transparent;
+}
+#header{
+  padding-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  grid-template-rows: repeat(4,1fr);
+  grid-template-areas: "tag tag tag editor editor editor "
+                                              "coding coding coding editor editor editor"
+                                              "coding coding coding editor editor editor"
+                                              "coding coding coding editor editor editor"
+                                              "coding coding coding editor editor editor"
+                                              ". . arrow . . .";
+  background-image: url(../res/images/bg-1.svg);
+  background-size: cover;
+  background-position: 0 -195px;
+}
+#text_editor_animation{
+ grid-area: editor;
+ height: fit-content;
+}
+#text_editor_animation img {
+  width: 85%;
+  height: 365px;
+}
+#code_animation {
+  top: 90px;
+  left: 90px;
+}
+#tag_line{
+  grid-area: tag;
+}
+#tag_line p{
+  display: inline;
+  font-size: 3rem;
+  text-align: start;
+  margin-left: 75px;
+}
+
+#boy_coding_animation{
+  grid-area: coding;
+  width: 300px;
+  height: fit-content;
+  margin-left: 100px;
+padding-top: 10px;
+}
+#boy_coding_animation img {
+  width: 500px;
+}
+
+#arrow_downside{
+  grid-area: arrow;
+  justify-self: end;
+  margin-top: -75px;
+}
+
+#skills {
+  margin-top: 50px;
+}
+#skills__body {
+  width: 50%;
+}
+.skills_item {
+  margin: 20px 10px;
+}
+h2{
+  font-size: 2rem;
+}
+#skills__title .underline svg{
+  width: 100px;
+}
+
+#projects{
+  background-image: url(../res/images/bg-2.svg);
+}
+#projects__title .underline svg{
+  width: 140px;
+}
+#about__title .underline svg{
+  width: 108px;
+}
+#contact__title .underline svg{
+  width: 190px;
+}
+#project_items{
+  justify-content: center;
+}
+.tags{
+  padding-left: 15px;
+}
 }
