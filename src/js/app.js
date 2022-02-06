@@ -1,39 +1,67 @@
 
 let navigation = document.querySelector("#navigation").children[0];
 let collapseBar = document.querySelector("#collapse_bar");
-collapseBar.onclick = function(){
-     if(window.outerWidth<711){
-          if( navigation.style.height == `0px`){
+collapseBar.onclick = function () {
+     if (window.outerWidth < 711) {
+          if (navigation.style.height == `0px`) {
                navigation.style.height = `450px`;
-          }else if(navigation.style.height = `450px`){
+          } else if (navigation.style.height = `450px`) {
                navigation.style.height = `0px`;
           }
      };
 }
-
-navigation.children[0].onclick = function(){
-     if(window.outerWidth<711){
+navigation.children[0].onclick = function () {
+     if (window.outerWidth < 711) {
           navigation.style.height = `0px`;
+     }else{
+          navigation.children[0].children[0].classList.add("active") ;
+          navigation.children[1].children[0].classList.remove("active") ;
+          navigation.children[2].children[0].classList.remove("active") ;
+          navigation.children[3].children[0].classList.remove("active") ;
      };
 }
-navigation.children[1].onclick = function(){
-     if(window.outerWidth<711){
+navigation.children[1].onclick = function () {
+     if (window.outerWidth < 711) {
           navigation.style.height = `0px`;
+     }else if(window.outerWidth > 711){
+          navigation.children[1].children[0].classList.add("active") ;
+          navigation.children[0].children[0].classList.remove("active") ;
+          navigation.children[2].children[0].classList.remove("active") ;
+          navigation.children[3].children[0].classList.remove("active") ;
+          navigation.children[4].children[0].classList.remove("active") ;
      };
 }
-navigation.children[2].onclick = function(){
-     if(window.outerWidth<711){
+navigation.children[2].onclick = function () {
+     if (window.outerWidth < 711) {
           navigation.style.height = `0px`;
+     }else if(window.outerWidth > 711){
+          navigation.children[2].children[0].classList.add("active") ;
+          navigation.children[1].children[0].classList.remove("active") ;
+          navigation.children[0].children[0].classList.remove("active") ;
+          navigation.children[3].children[0].classList.remove("active") ;
+          navigation.children[4].children[0].classList.remove("active") ;
      };
 }
-navigation.children[3].onclick = function(){
-     if(window.outerWidth<711){
+navigation.children[3].onclick = function () {
+     if (window.outerWidth < 711) {
           navigation.style.height = `0px`;
+     }else if(window.outerWidth > 711){
+          navigation.children[3].children[0].classList.add("active") ;
+          navigation.children[1].children[0].classList.remove("active") ;
+          navigation.children[2].children[0].classList.remove("active") ;
+          navigation.children[0].children[0].classList.remove("active") ;
+          navigation.children[4].children[0].classList.remove("active") ;
      };
 }
-navigation.children[4].onclick = function(){
-     if(window.outerWidth<711){
+navigation.children[4].onclick = function () {
+     if (window.outerWidth < 711) {
           navigation.style.height = `0px`;
+     }else if(window.outerWidth > 711){
+          navigation.children[4].children[0].classList.add("active") ;
+          navigation.children[1].children[0].classList.remove("active") ;
+          navigation.children[2].children[0].classList.remove("active") ;
+          navigation.children[3].children[0].classList.remove("active") ;
+          navigation.children[0].children[0].classList.remove("active") ;
      };
 }
 
@@ -58,11 +86,12 @@ window.onclick = function (e) {
                contactBody[1].classList.remove("contact-active");
           };
      };
-    
+
 }
 
 
-
+navigator.clipboard.readText().then(
+     document.querySelector(".email").innerText);
 
 
 

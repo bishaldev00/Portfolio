@@ -806,6 +806,7 @@ footer .socials {
 }
 #navigation ul li a{
   padding-bottom: 11px;
+  transition: all .5s;
 }
 #navigation ul li  .active{
   color:white;

@@ -2,6 +2,7 @@ const gulp = require('gulp')
 const htmlmin = require('gulp-htmlmin');
 const cleanCSS = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
+const uglifyJs = require('gulp-uglify-es').default;
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const replace = require('gulp-replace');
@@ -33,13 +34,12 @@ gulp.task('minifyCss', () => {
 });
 
 //  minify js
-// gulp.task('minifyJs', () => {
-//     return gulp.src('src/js/*.js')
-//         .pipe(uglify())
-//         .pipe(gulp.dest('public/js'));
-// });
 
-
+gulp.task("minifyJs", function () {
+	return gulp.src('src/js/*.js')
+		.pipe(uglifyJs())
+		.pipe(gulp.dest('public/js'));
+});
 
 // compress images
 gulp.task('imageMin', async () => {
@@ -54,4 +54,4 @@ gulp.task('replaceString',()=> {
       .pipe(gulp.dest('./'));
   });
 
-gulp.task('default', gulp.series(['minifyHtml','minifyHtmlToRoot', 'autoPrefixer', 'minifyCss', 'imageMin','replaceString']));
+gulp.task('default', gulp.series(['minifyHtml','minifyHtmlToRoot', 'autoPrefixer','minifyJs','minifyCss', 'imageMin','replaceString']));
