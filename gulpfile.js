@@ -42,11 +42,11 @@ gulp.task("minifyJs", function () {
 });
 
 // compress images
-gulp.task('imageMin', async () => {
-    gulp.src('src/res/images/*',)
-        .pipe(imagemin())
-        .pipe(gulp.dest('public/res/images'))
-});
+// gulp.task('imageMin', async () => {
+//     gulp.src('src/res/images/*',)
+//         .pipe(imagemin())
+//         .pipe(gulp.dest('public/res/images'))
+// });
 
 gulp.task('replaceString',()=> {
     return gulp.src('./index.html')
@@ -54,4 +54,5 @@ gulp.task('replaceString',()=> {
       .pipe(gulp.dest('./'));
   });
 
-gulp.task('default', gulp.series(['minifyHtml','minifyHtmlToRoot', 'autoPrefixer','minifyJs','minifyCss', 'imageMin','replaceString']));
+
+gulp.task('default', gulp.series(['minifyHtml','minifyHtmlToRoot', 'autoPrefixer','minifyJs','minifyCss','replaceString']));

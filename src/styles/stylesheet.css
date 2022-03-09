@@ -37,28 +37,23 @@ body {
 .contact-active{
   display: block !important;
 }
+.email-msg{
+  display: block;
+  margin-left: 7%;
+  margin-bottom: 5px;
+  font-weight: var(--font-bold);
+  font-size: 1.25rem;
+}
 .email{
-  display: inline;
-  /* color: white; */
+  display: block;
   margin-left: 7%;
   font-weight: var(--font-bold);
   font-size: 1.25rem;
 }
-
 .copy{
-  cursor: pointer;
-  display: inline-block;
-  height: 50px;
-  border: none;
-  margin-left: 30%;
-  margin-top: 20px;
-  padding: 10px 15px;
-  font-size: 1.5rem;
-  box-shadow: none;
-  color: white;
-  background-color: var(--color-primary);
-  border-radius: 20px;
+  display: none;
 }
+
 /* ---  Navbar  ---*/
 #nav {
   width: 100%;
@@ -348,7 +343,7 @@ body {
 /* --- Section title : Projects */
 #projects__title {
   text-align: center;
-  padding-top: 35px;
+  padding-top: 60px;
   color: var(--color-primary);
 }
 
@@ -362,45 +357,28 @@ body {
   display: flex;
   position: relative;
   align-items: center;
-  width: fit-content;
+  width: 100px;
   padding: 7px 10px;
   margin-left: 75vw;
   margin-right: 7vw;
+  margin-bottom: 20px;
   border-radius: 15px;
   background-color: #fff;
   border: 1.5px solid rgba(0, 0, 0, 0.158);
+  outline: none;
 }
-#filter p {
-  color: #626262;
-}
-#filter img {
-  width: 15px;
-  height: 10px;
-  margin-left: 5px;
-}
-#filter_body {
-  width: fit-content;
-  height: fit-content;
-  position: absolute;
-  top: 40px;
-  right: 5px;
-  background-color: rgba(0, 0, 0, 0.507);
-  display: none;
-}
-#filter_body ul li {
-  font-size: 1.25rem;
-  color: white;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 10px 5px;
-  white-space: nowrap;
-}
+
+
 /* --- project items */
 #project_items {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 30px;
+}
+.items{
+  background-color: #b3b2b238;
+  border-radius: 10px;
 }
 .body {
   width: 350px;
@@ -419,9 +397,9 @@ body {
 .name {
   text-align: end;
   margin-top: -10px;
-  margin-right: 20px;
+  margin-right: 10px;
   font-weight: var(--font-semibold);
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .options {
@@ -473,7 +451,16 @@ body {
   display: none;
 }
 #item_one .body {
-  background-image: url(../res/images/Gym-Website-Landing-Page1_59.png);
+  background-image: url(../res/images/paralax_scroll-animation.gif);
+  background-size: contain;
+}
+#item_two .body {
+  background-image: url(../res/images/responsive_html_css.gif);
+  background-size: contain;
+}
+#item_three .body {
+  background-image: url(../res/images/bootsrap&google_charts.gif);
+  background-size: contain;
 }
 
 /* --- See more ---- */
@@ -785,7 +772,7 @@ footer .socials {
     width: 608px;
     height: 45px;
     display: flex;
-    justify-content: end;
+    justify-content: right;
     overflow: auto;
     border: none;
     background-color: #fff;
@@ -829,7 +816,7 @@ footer .socials {
                                               ". . arrow . . .";
   background-image: url(../res/images/bg-1.svg);
   background-size: cover;
-  background-position: 0 -195px;
+  background-position: 0 -130px;
 }
 #text_editor_animation{
  grid-area: editor;
@@ -892,6 +879,7 @@ h2{
 }
 #filter {
   margin-left: 77vw;
+  width: fit-content;
 }
 #projects__title .underline svg{
   width: 140px;
@@ -946,7 +934,21 @@ cursor: pointer;
 }
 #contact #form {
   width: 41%;
-
+}
+.copy{
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+  height: 50px;
+  border: none;
+  margin-left: 30%;
+  margin-top: 20px;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  box-shadow: none;
+  color: white;
+  background-color: var(--color-primary);
+  border-radius: 20px;
 }
 #contact_form_body{
   padding-bottom: 20px;
