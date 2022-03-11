@@ -459,7 +459,11 @@ body {
   background-size: contain;
 }
 #item_three .body {
-  background-image: url(../res/images/bootsrap&google_charts.gif);
+  background-image: url(../res/images/google_charts.gif);
+  background-size: contain;
+}
+#item_four .body {
+  background-image: url(../res/images/tailblocks.gif);
   background-size: contain;
 }
 
